@@ -22,7 +22,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Desktop Menu */}
-                <ul className="hidden md:flex space-x-8 text-lg">
+                <ul className="hidden md:flex space-x-8 text-sm">
                     {['Home', 'About Us', 'Services', 'Portfolio', 'Contact Us'].map((page) => (
                         <li key={page}>
                             <Link
