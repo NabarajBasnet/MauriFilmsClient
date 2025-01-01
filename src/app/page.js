@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import AboutUs from './aboutus/page';
+import Footer from '@/components/Footer/Footer';
 
 export default function HomePage() {
   return (
@@ -59,6 +60,7 @@ export default function HomePage() {
       </div>
 
       <AboutUs />
+      <Footer />
     </div>
   );
 }
