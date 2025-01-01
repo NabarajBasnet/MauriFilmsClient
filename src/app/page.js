@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import AboutUs from './aboutus/page';
 
 export default function HomePage() {
   return (
@@ -23,7 +24,7 @@ export default function HomePage() {
 
         {/* Subtext */}
         <motion.p
-          className="text-lg md:text-2xl mb-8 max-w-3xl"
+          className="text-lg font-semibold md:text-2xl mb-8 max-w-3xl"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
@@ -33,7 +34,7 @@ export default function HomePage() {
 
         {/* Description */}
         <motion.p
-          className="text-base md:text-lg max-w-2xl mb-10"
+          className="text-base font-semibold md:text-lg max-w-2xl mb-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1, ease: 'easeOut' }}
@@ -48,14 +49,16 @@ export default function HomePage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5, ease: 'easeOut' }}
         >
-          <Button variant="destructive" size="lg">
+          <Button variant="destructive" className='rounded-none' size="lg">
             Our Portfolio
           </Button>
-          <Button variant="outline" size="lg" className='text-black hover:text-gray-700 transition-colors duration-300'>
+          <Button variant="outline" size="lg" className='text-black rounded-none hover:text-gray-700 transition-colors duration-300'>
             Contact Us
           </Button>
         </motion.div>
       </div>
+
+      <AboutUs />
     </div>
   );
 }

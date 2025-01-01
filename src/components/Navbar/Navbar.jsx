@@ -1,17 +1,20 @@
 'use client';
 
+import {
+    Sheet,
+    SheetClose,
+    SheetContent,
+    SheetDescription,
+    SheetFooter,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet";
 import { useState } from 'react';
 import Link from 'next/link';
-import { MenuIcon, XIcon } from 'lucide-react';
+import { MenuIcon } from 'lucide-react';
 
 export default function Navbar() {
-    const [menuOpen, setMenuOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
-
-    // Array of paths and their corresponding labels
     const links = [
         { path: '/', label: 'Home' },
         { path: '/aboutus', label: 'About Us' },
@@ -26,12 +29,12 @@ export default function Navbar() {
                 {/* Logo */}
                 <div className="text-2xl font-bold text-gray-800">
                     <Link href="/" className="hover:text-gray-600">
-                        BrandName
+                        Mauri Films
                     </Link>
                 </div>
 
                 {/* Desktop Menu */}
-                <ul className="hidden md:flex space-x-8 text-sm">
+                <ul className="hidden md:flex space-x-8 text-sm font-semibold">
                     {links.map((link) => (
                         <li key={link.path}>
                             <Link
@@ -44,32 +47,37 @@ export default function Navbar() {
                     ))}
                 </ul>
 
-                {/* Mobile Menu Icon */}
-                <button
-                    className="md:hidden text-gray-800 focus:outline-none"
-                    onClick={toggleMenu}
-                    aria-label="Toggle Menu"
-                >
-                    {menuOpen ? <XIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
-                </button>
+                {/* Mobile Menu (Sheet Trigger) */}
+                <Sheet>
+                    <SheetTrigger asChild>
+                        <button
+                            className="md:hidden text-gray-800 focus:outline-none"
+                            aria-label="Open Menu"
+                        >
+                            <MenuIcon className="w-6 h-6" />
+                        </button>
+                    </SheetTrigger>
+                    <SheetContent side="right" className="w-72">
+                        <SheetHeader>
+                            <SheetTitle className="text-lg font-bold">Mauri Films</SheetTitle>
+                        </SheetHeader>
+                        <nav className="mt-4">
+                            <ul className="space-y-4">
+                                {links.map((link) => (
+                                    <li key={link.path}>
+                                        <Link
+                                            href={link.path}
+                                            className="block text-gray-700 hover:text-gray-900 transition-all font-semibold text-sm"
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </nav>
+                    </SheetContent>
+                </Sheet>
             </div>
-
-            {/* Mobile Menu */}
-            {menuOpen && (
-                <ul className="md:hidden bg-white border-t border-gray-200 shadow-lg">
-                    {links.map((link) => (
-                        <li key={link.path} className="py-2 px-6">
-                            <Link
-                                href={link.path}
-                                className="block text-gray-700 hover:text-gray-900 transition"
-                                onClick={() => setMenuOpen(false)}
-                            >
-                                {link.label}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            )}
         </nav>
     );
 }
