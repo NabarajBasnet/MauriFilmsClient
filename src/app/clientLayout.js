@@ -6,13 +6,14 @@ import { usePathname } from "next/navigation";
 
 export default function ClientLayout({ children }) {
     const pathname = usePathname();
-    const isDashboard = pathname.startsWith('/dashboard');
+
+    const hideLayout = pathname.startsWith('/dashboard') || pathname.startsWith('/login') || pathname.startsWith('/signup');
 
     return (
         <div>
-            {!isDashboard && <Navbar />}
+            {!hideLayout && <Navbar />}
             {children}
-            {!isDashboard && <Footer />}
+            {!hideLayout && <Footer />}
         </div>
     );
 }
