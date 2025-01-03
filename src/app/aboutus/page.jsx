@@ -5,14 +5,14 @@ export default function AboutUs() {
     return (
         <section className="relative bg-white">
             {/* Banner Section */}
-            <div className="relative bg-cover bg-center h-[300px]" style={{ backgroundImage: "url('/aboutusheader.jpg')" }}>
+            <div className="relative bg-cover bg-center h-[230px]" style={{ backgroundImage: "url('/aboutusheader.jpg')" }}>
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-white">About Us</h1>
                 </div>
             </div>
 
             {/* Content Section */}
-            <div className="max-w-7xl mx-auto px-6 py-16">
+            <div className="max-w-7xl mx-auto px-20 py-16">
                 {/* Title Section */}
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Mauri Films: Where Stories Come to Life</h2>

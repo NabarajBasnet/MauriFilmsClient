@@ -4,7 +4,6 @@ import { IoCloseSharp } from "react-icons/io5";
 import * as React from "react"
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import { cva } from "class-variance-authority";
-import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 

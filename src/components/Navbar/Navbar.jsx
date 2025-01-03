@@ -47,7 +47,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Desktop Menu */}
-                {/* <ul className="hidden md:flex space-x-8 text-sm font-semibold">
+                <ul className="hidden md:flex space-x-8 text-sm font-semibold">
                     {links.map((link) => (
                         <li key={link.path}>
                             <Link
@@ -58,10 +58,10 @@ export default function Navbar() {
                             </Link>
                         </li>
                     ))}
-                </ul> */}
+                </ul>
 
                 {/* User Dropdown */}
-                {/* <div className="hidden md:flex items-center space-x-4">
+                <div className="hidden md:flex items-center space-x-4">
                     {isLoggedIn ? (
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
@@ -98,19 +98,19 @@ export default function Navbar() {
                             </Link>
                         </Button>
                     )}
-                </div> */}
+                </div>
 
                 {/* Mobile Menu (Sheet Trigger) */}
                 <Sheet>
                     <SheetTrigger asChild>
                         <button
-                            className="text-gray-800 focus:outline-none"
+                            className="text-gray-800 md:hidden focus:outline-none"
                             aria-label="Open Menu"
                         >
                             <MenuIcon className="w-8 h-6" />
                         </button>
                     </SheetTrigger>
-                    <SheetContent side="right" className="w-full">
+                    <SheetContent side="right" className="w-9/12">
                         <SheetHeader>
                             <SheetTitle className="text-xl font-bold">Mauri Films</SheetTitle>
                         </SheetHeader>
