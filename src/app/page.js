@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import AboutUs from './aboutus/page';
 import Footer from '@/components/Footer/Footer';
 import Services from './services/page';
+import ContactUs from './contactus/page';
+import Portfolio from './portfolio/page';
 
 export default function HomePage() {
   return (
@@ -62,6 +64,8 @@ export default function HomePage() {
 
       <AboutUs />
       <Services />
+      <Portfolio />
+      <ContactUs />
       <Footer />
     </div>
   );

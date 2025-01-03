@@ -13,7 +13,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
-const Contact = () => {
+const ContactUs = () => {
     return (
         <div>
             <div className="relative bg-cover bg-center h-[230px]" style={{ backgroundImage: "url('/aboutusheader.jpg')" }}>
@@ -116,4 +116,4 @@ const Contact = () => {
     );
 };
 
-export default Contact;
+export default ContactUs;
