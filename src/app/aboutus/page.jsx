@@ -12,7 +12,7 @@ export default function AboutUs() {
             </div>
 
             {/* Content Section */}
-            <div className="max-w-7xl mx-auto px-20 py-16">
+            <div className="max-w-7xl mx-auto px-4 md:px-20 py-16">
                 {/* Title Section */}
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Mauri Films: Where Stories Come to Life</h2>

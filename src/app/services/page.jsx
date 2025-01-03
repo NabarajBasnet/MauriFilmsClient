@@ -53,7 +53,7 @@ const Services = () => {
                     <h1 className="text-3xl md:text-6xl font-bold text-white">Services</h1>
                 </div>
             </div>
-            <section className="bg-white py-16 px-20">
+            <section className="bg-white py-16 px-4 md:px-20">
                 <div className="container mx-auto">
                     <div className="space-y-20">
                         {services.map((service, index) => (
