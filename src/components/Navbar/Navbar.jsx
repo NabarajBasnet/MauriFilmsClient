@@ -91,12 +91,14 @@ export default function Navbar() {
                             </DropdownMenuContent>
                         </DropdownMenu>
                     ) : (
-                        <Button asChild>
-                            <Link href="/login" className="text-sm font-semibold">
-                                <LogInIcon className="w-4 h-4 mr-2" />
+                        <div className="space-x-4">
+                            <Link href="/login" className="text-sm">
                                 Login
                             </Link>
-                        </Button>
+                            <Link href="/signup" className="text-sm">
+                                Sign up
+                            </Link>
+                        </div>
                     )}
                 </div>
 

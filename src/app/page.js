@@ -136,26 +136,29 @@ export default function HomePage() {
       )}
 
       {/* Image Gallery Grid */}
-      <div className="w-full flex justify-center py-16 min-h-full items-center">
-        <div className="w-10/12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {images.map((image, index) => (
-              <div
-                key={index}
-                className="relative w-full h-96 bg-gray-200 overflow-hidden cursor-pointer"
-                onClick={() => {
-                  setGalleryState(true);
-                  setCurrentImageIndex(index);
-                }}
-              >
-                <Image
-                  src={image.image}
-                  alt={`Image ${index + 1}`}
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-            ))}
+      <div className="w-full py-16">
+        <h1 className="text-center mb-8 text-4xl font-bold">Our Galary</h1>
+        <div className="w-full flex justify-center min-h-full items-center">
+          <div className="w-10/12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              {images.map((image, index) => (
+                <div
+                  key={index}
+                  className="relative w-full h-96 bg-gray-200 overflow-hidden cursor-pointer"
+                  onClick={() => {
+                    setGalleryState(true);
+                    setCurrentImageIndex(index);
+                  }}
+                >
+                  <Image
+                    src={image.image}
+                    alt={`Image ${index + 1}`}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
