@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Footer from '@/components/Footer/Footer';
@@ -48,6 +49,46 @@ export default function HomePage() {
       image: "/aboutusheader.jpg",
     },
   ];
+
+  const images = [
+    {
+      id: 1,
+      image: '/images/1.jpg',
+    }, {
+      id: 2,
+      image: '/images/2.jpg',
+    }, {
+      id: 3,
+      image: '/images/3.jpg',
+    }, {
+      id: 4,
+      image: '/images/4.jpg',
+    }, {
+      id: 5,
+      image: '/images/5.jpg',
+    }, {
+      id: 6,
+      image: '/images/6.jpg',
+    }, {
+      id: 7,
+      image: '/images/7.jpg',
+    }, {
+      id: 8,
+      image: '/images/8.jpg',
+    }, {
+      id: 9,
+      image: '/images/9.jpg',
+    }, {
+      id: 10,
+      image: '/images/10.jpg',
+    }, {
+      id: 11,
+      image: '/images/11.jpg',
+    }, {
+      id: 12,
+      image: '/images/12.jpg',
+    },
+  ]
 
   return (
     <div className="relative h-screen w-full bg-cover bg-center">
@@ -102,14 +143,24 @@ export default function HomePage() {
         </motion.div>
       </div>
 
-      <div className='w-full flex justify-center min-h-screen items-center'>
-        <div className='w-11/12'>
-          <div className='grid grid-cols-4 gap-4'>
-            {services.map((service, index) =>
-              <div key={index}>
-                <img src={service.image} />
+
+      <div className='w-full flex justify-center py-16 min-h-full items-center'>
+        <div className='w-10/12'>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className="relative w-full h-96 bg-gray-200 overflow-hidden"
+              >
+                <Image
+                  src={image.image}
+                  alt={`Image ${index + 1}`}
+                  layout="fill"
+                  objectFit="cover"
+                  onError={() => console.error(`Error loading image: ${image}`)}
+                />
               </div>
-            )}
+            ))}
           </div>
         </div>
       </div>
