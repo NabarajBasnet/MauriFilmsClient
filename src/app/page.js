@@ -1,11 +1,11 @@
 'use client';
 
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Footer from '@/components/Footer/Footer';
 import { useState } from 'react';
-import { FaTimes, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 export default function HomePage() {
   const [galleryState, setGalleryState] = useState(false);
@@ -98,7 +98,7 @@ export default function HomePage() {
       {galleryState && (
         <div
           className="fixed inset-0 flex items-center justify-center z-50"
-          onClick={() => setGalleryState(false)} // Close the modal on background click
+          onClick={() => setGalleryState(false)}
         >
           {/* Background Overlay */}
           <div
@@ -108,14 +108,8 @@ export default function HomePage() {
           {/* Modal Content */}
           <div
             className="relative bg-white w-11/12 md:w-3/4 lg:w-1/2 shadow-xl rounded-lg overflow-hidden"
-            onClick={(e) => e.stopPropagation()} // Prevent the click from propagating to the parent
+            onClick={(e) => e.stopPropagation()}
           >
-            <button
-              className="absolute top-4 right-4 text-gray-600 hover:text-black"
-              onClick={() => setGalleryState(false)}
-            >
-              <FaTimes size={24} />
-            </button>
             <Image
               src={images[currentImageIndex].image}
               alt={`Image ${currentImageIndex + 1}`}
@@ -128,20 +122,18 @@ export default function HomePage() {
                 className="text-gray-600 hover:text-black bg-white rounded-full p-2 shadow-md"
                 onClick={handlePrev}
               >
-                <FaArrowLeft size={24} />
+                <FaAngleLeft size={24} />
               </button>
               <button
                 className="text-gray-600 hover:text-black bg-white rounded-full p-2 shadow-md"
                 onClick={handleNext}
               >
-                <FaArrowRight size={24} />
+                <FaAngleRight size={24} />
               </button>
             </div>
           </div>
         </div>
       )}
-
-
 
       {/* Image Gallery Grid */}
       <div className="w-full flex justify-center py-16 min-h-full items-center">
