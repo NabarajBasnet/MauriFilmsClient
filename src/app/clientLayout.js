@@ -12,10 +12,11 @@ export default function ClientLayout({ children }) {
 
     return (
         <div>
-            <IoLogoWhatsapp className="fixed bottom-8 md:bottom-16 right-8 md:right-16 z-50 text-6xl text-green-500 cursor-pointer" />
             {!hideLayout && <Navbar />}
-            {children}
-            {!hideLayout && <Footer />}
+            <div className="w-full min-h-screen bg-fixed bg-cover bg-center bg-[url('/homepage.jpg')] -z-10">
+                {children}
+            </div>
+            <IoLogoWhatsapp className="fixed bottom-8 md:bottom-16 right-8 md:right-16 z-50 text-6xl text-green-500 cursor-pointer" />
         </div>
     );
 }

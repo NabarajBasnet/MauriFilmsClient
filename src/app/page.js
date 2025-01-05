@@ -2,15 +2,55 @@
 
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import AboutUs from './aboutus/page';
 import Footer from '@/components/Footer/Footer';
-import Services from './services/page';
-import ContactUs from './contactus/page';
-import Portfolio from './portfolio/page';
 
 export default function HomePage() {
+
+  const services = [
+    {
+      title: "Wedding Films",
+      description: "Capturing the magic of your special day with elegance and detail.",
+      image: "/aboutusheader.jpg",
+    },
+    {
+      title: "Reception Coverage",
+      description: "Relive the joy and celebrations of your post-wedding festivities.",
+      image: "/aboutusheader.jpg",
+    },
+    {
+      title: "Haldi/Mehendi Events",
+      description: "Highlighting the vibrant traditions and heartfelt moments of pre-wedding rituals.",
+      image: "/aboutusheader.jpg",
+    },
+    {
+      title: "Bratabandha",
+      description: "Documenting the sacred journey of coming-of-age ceremonies with cultural authenticity.",
+      image: "/aboutusheader.jpg",
+    },
+    {
+      title: "Pre-Wedding/Post-Wedding Shoots",
+      description: "Showcasing your love story in captivating locations and settings.",
+      image: "/aboutusheader.jpg",
+    },
+    {
+      title: "Commercials",
+      description: "Crafting impactful advertisements that resonate with your target audience.",
+      image: "/aboutusheader.jpg",
+    },
+    {
+      title: "Documentaries",
+      description: "Telling compelling real-life stories with depth and emotion.",
+      image: "/aboutusheader.jpg",
+    },
+    {
+      title: "Short Films",
+      description: "Creating artistic and engaging narratives with precision and style.",
+      image: "/aboutusheader.jpg",
+    },
+  ];
+
   return (
-    <div className="relative h-screen w-full bg-cover bg-center" style={{ backgroundImage: "url('/homepage.jpg')" }}>
+    <div className="relative h-screen w-full bg-cover bg-center">
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
@@ -62,10 +102,17 @@ export default function HomePage() {
         </motion.div>
       </div>
 
-      <AboutUs />
-      <Services />
-      <Portfolio />
-      <ContactUs />
+      <div className='w-full flex justify-center min-h-screen items-center'>
+        <div className='w-11/12'>
+          <div className='grid grid-cols-4 gap-4'>
+            {services.map((service, index) =>
+              <div key={index}>
+                <img src={service.image} />
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
       <Footer />
     </div>
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/components/Footer/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -111,7 +112,7 @@ const ContactUs = () => {
             </section>
 
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.4565198222667!2d85.33282757498846!3d27.703187676184896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb194487783651%3A0xcbfa6f39863d05f6!2sThe%20Physique%20Workshop!5e0!3m2!1sen!2snp!4v1735902286633!5m2!1sen!2snp" width="100%" height="450" loading="lazy"></iframe>
-
+            <Footer />
         </div>
     );
 };

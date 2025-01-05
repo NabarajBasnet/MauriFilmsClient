@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer/Footer";
 import { Button } from "@/components/ui/button";
 import React from "react";
 
@@ -54,6 +55,7 @@ export default function AboutUs() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </section>
     );
 }
