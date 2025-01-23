@@ -38,11 +38,11 @@ export default function Navbar() {
 
     return (
         <nav className="bg-[#800000] shadow-md sticky top-0 w-full z-50">
-            <div className="container mx-auto flex items-center justify-between py-4 px-6">
+            <div className="container mx-auto flex items-center justify-between py-2 px-6">
                 {/* Logo */}
                 <div className="text-2xl font-bold">
                     <Link href="/">
-                        <img src='/logo.png' className="w-8 h-8" />
+                        <img src='/mauri films_white.png' className="w-32" />
                     </Link>
                 </div>
 
