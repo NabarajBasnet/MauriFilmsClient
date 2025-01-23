@@ -78,7 +78,7 @@ const Services = () => {
                                 <div className="md:w-1/2">
                                     <h2 className="text-2xl text-center md:text-start font-bold">{service.title}</h2>
                                     <p className="text-sm my-4 font-semibold text-gray-700 leading-relaxed">{service.description}</p>
-                                    <Button className="px-10 bg-gradient-to-r from-black via-gray-700 to-gray-500 hover:bg-gradient-to-l hover:from-black hover:via-gray-700 hover:to-gray-500 rounded-none transition-all duration-500 my-10 py-4">BOOK DATE</Button>
+                                    <Button className="px-10 transition-color duration-500 bg-[#800000] rounded-none hover:bg-transparent hover:text-[#800000] my-10 py-4">BOOK DATE</Button>
                                 </div>
                             </div>
                         ))}

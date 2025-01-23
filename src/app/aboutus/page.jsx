@@ -48,7 +48,7 @@ export default function AboutUs() {
                         </div>
 
                         <div className="mt-12">
-                            <Button className="hover:bg-transparent border-2 border-yellow-400 text-black hover:text-yellow-600 px-6 py-3 rounded-none p-4 hover:shadow-sm transition-all bg-yellow-400">
+                            <Button className="hover:bg-transparent text-white hover:text-[#800000] px-6 py-3 rounded-none p-4 hover:shadow-sm transition-transform bg-[#800000]">
                                 Book Your Date
                             </Button>
                         </div>
