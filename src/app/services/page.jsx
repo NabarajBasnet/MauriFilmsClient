@@ -1,7 +1,10 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Footer from '@/components/Footer/Footer';
+import { motion } from 'framer-motion';
 
 const Services = () => {
     const services = [
@@ -58,7 +61,10 @@ const Services = () => {
                 <div className="container mx-auto">
                     <div className="space-y-20">
                         {services.map((service, index) => (
-                            <div
+                            <motion.div
+                                initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 1, ease: 'easeOut' }}
                                 key={index}
                                 className={`flex flex-col md:flex-row ${index % 2 !== 0 ? "md:flex-row-reverse" : ""} items-center gap-8`}
                             >
@@ -80,7 +86,7 @@ const Services = () => {
                                     <p className="text-sm my-4 font-semibold text-gray-700 leading-relaxed">{service.description}</p>
                                     <Button className="px-10 transition-color duration-500 bg-[#800000] rounded-none hover:bg-transparent hover:text-[#800000] my-10 py-4">BOOK DATE</Button>
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
