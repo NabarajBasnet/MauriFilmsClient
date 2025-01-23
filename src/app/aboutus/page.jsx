@@ -16,7 +16,7 @@ export default function AboutUs() {
             <div className="max-w-7xl mx-auto px-4 md:px-20 py-16">
                 {/* Title Section */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Mauri Films: Where Stories Come to Life</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Mauri Films: Your Story Our Creativity</h2>
                     <p className="text-sm md:text-md font-semibold text-gray-600 max-w-2xl mx-auto">
                         Mauri Films is more than just a creative studio; it's a space where your cherished moments and unique ideas take center stage. Founded with the belief that every story deserves to be told beautifully, we specialize in capturing life's most meaningful events with artistry and flair.
                     </p>

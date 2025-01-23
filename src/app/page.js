@@ -6,10 +6,12 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Footer from '@/components/Footer/Footer';
 import { useState } from 'react';
+import { useRouter } from "next/navigation";
 
 export default function HomePage() {
   const [galleryState, setGalleryState] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(null);
+  const router = useRouter()
 
   const images = [
     { id: 1, image: '/images/1.jpg' },
@@ -64,7 +66,7 @@ export default function HomePage() {
         </motion.p>
 
         <motion.p
-          className="text-base font-semibold md:text-lg max-w-2xl mb-10"
+          className="text-sm md:text-lg max-w-2xl mb-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1, ease: 'easeOut' }}
@@ -81,16 +83,20 @@ export default function HomePage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5, ease: 'easeOut' }}
         >
-          <Button variant="destructive" className="rounded-none" size="lg">
+          <Button className="rounded-none hover:bg-[#800000] bg-[#800000]" size="lg">
             Our Portfolio
           </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="text-black rounded-none hover:text-gray-700 transition-colors duration-300"
-          >
-            Contact Us
-          </Button>
+
+          <a href="https://wa.me/+9779868177119" target="_blank" rel="noopener noreferrer">
+            <Button
+              variant="outline"
+              size="lg"
+              className="text-black rounded-none hover:text-gray-700 transition-colors duration-300"
+            >
+              Contact Us
+            </Button>
+          </a>
+
         </motion.div>
       </div>
 
@@ -137,7 +143,7 @@ export default function HomePage() {
 
       {/* Image Gallery Grid */}
       <div className="w-full py-16">
-        <h1 className="text-center mb-8 text-4xl font-bold">Our Galary</h1>
+        <h1 className="text-center mb-8 text-4xl font-bold">Our Gallery</h1>
         <div className="w-full flex justify-center min-h-full items-center">
           <div className="w-10/12">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">

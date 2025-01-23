@@ -1,11 +1,21 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "./clientLayout";
-import Footer from "@/components/Footer/Footer";
+import { Inter,Rubik } from "next/font/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+export const title = Rubik({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+});
+
+export const text = Inter({
+  subsets: ['latin'],
+  weight: ['400', '700'],
 });
 
 const geistMono = Geist_Mono({

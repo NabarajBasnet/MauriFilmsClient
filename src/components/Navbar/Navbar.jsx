@@ -37,22 +37,22 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="bg-white shadow-md sticky top-0 w-full z-50">
+        <nav className="bg-[#800000] shadow-md sticky top-0 w-full z-50">
             <div className="container mx-auto flex items-center justify-between py-4 px-6">
                 {/* Logo */}
-                <div className="text-2xl font-bold text-gray-800">
-                    <Link href="/" className="hover:text-gray-600">
-                        Mauri Films
+                <div className="text-2xl font-bold">
+                    <Link href="/">
+                        <img src='/logo.png' className="w-8 h-8" />
                     </Link>
                 </div>
 
                 {/* Desktop Menu */}
-                <ul className="hidden md:flex space-x-8 text-sm font-semibold">
+                <ul className="hidden text-white md:flex space-x-8 text-sm font-semibold">
                     {links.map((link) => (
                         <li key={link.path}>
                             <Link
                                 href={link.path}
-                                className="text-gray-700 hover:text-gray-900 transition"
+                                className="transition-all"
                             >
                                 {link.label}
                             </Link>
@@ -61,11 +61,11 @@ export default function Navbar() {
                 </ul>
 
                 {/* User Dropdown */}
-                <div className="hidden md:flex items-center space-x-4">
+                <div className="hidden md:flex items-center text-white space-x-4">
                     {isLoggedIn ? (
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <button className="flex items-center space-x-2 text-gray-800 font-semibold hover:text-gray-900">
+                                <button className="flex items-center space-x-2 font-semibold">
                                     <UserIcon className="w-5 h-5" />
                                     <span>Account</span>
                                 </button>
