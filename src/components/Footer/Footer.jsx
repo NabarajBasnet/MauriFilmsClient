@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaYoutube, FaPinterestP, FaTiktok } from "react-icons/fa";
-import { VscDebugBreakpointLog } from "react-icons/vsc";
 
 const Footer = () => {
     return (
@@ -57,7 +56,7 @@ const Footer = () => {
                     </div>
 
                     {/* Copyright Section */}
-                    <p className="text-sm text-yellow-600 font-semibold mt-6 md:mt-0">
+                    <p className="text-sm text-white font-semibold mt-6 md:mt-0">
                         Copyright © 2025 Mauri Films | Powered by Mauri Films
                     </p>
                 </div>

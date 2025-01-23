@@ -106,7 +106,7 @@ export default function Navbar() {
                 <Sheet>
                     <SheetTrigger asChild>
                         <button
-                            className="text-gray-800 md:hidden focus:outline-none"
+                            className="text-white md:hidden focus:outline-none"
                             aria-label="Open Menu"
                         >
                             <MenuIcon className="w-8 h-6" />
