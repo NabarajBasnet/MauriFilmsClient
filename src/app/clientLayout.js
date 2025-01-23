@@ -9,12 +9,10 @@ export default function ClientLayout({ children }) {
 
     const hideLayout = pathname.startsWith('/dashboard') || pathname.startsWith('/login') || pathname.startsWith('/signup');
 
-
-
     return (
         <div>
             {!hideLayout && <Navbar />}
-            <div className="w-full min-h-screen bg-fixed bg-cover bg-center bg-[url('/homepage.jpg')] -z-10">
+            <div className="w-full min-h-screen bg-fixed bg-cover bg-center bg-[url('/DSC02729.jpg')] -z-10">
                 {children}
             </div>
             <a href="https://wa.me/+9779868177119" target="_blank" rel="noopener noreferrer">
