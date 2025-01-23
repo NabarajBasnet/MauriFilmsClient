@@ -1,3 +1,6 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import React from 'react';
 import Image from 'next/image';
 import Footer from '@/components/Footer/Footer';
@@ -47,28 +50,30 @@ const Portfolio = () => {
                     </p>
 
                     {portfolioItems.map((item, index) => (
-                        <div
+                        <motion.div
+                            initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 1, ease: 'easeOut' }}
                             key={index}
-                            className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''
-                                }`}
+                            className={`flex flex-col md:flex-row ${index % 2 !== 0 ? "md:flex-row-reverse" : ""} items-center gap-8`}
                         >
-                            {/* Text Section */}
-                            <div className={`space-y-4 ${index % 2 !== 0 ? 'md:order-2' : ''}`}>
-                                <h2 className="text-2xl text-center md:text-start font-bold">{item.title}</h2>
-                                <p className="text-sm leading-relaxed text-center md:text-start">{item.description}</p>
-                            </div>
-
                             {/* Image Section */}
-                            <div className="relative w-full h-96">
+                            <div className="relative w-full md:w-1/2 h-96">
                                 <Image
-                                    src={"/aboutusheader.jpg"}
+                                    src={item.image}
                                     alt={item.title}
                                     layout="fill"
                                     objectFit="cover"
                                     className="rounded-none shadow-lg"
                                 />
                             </div>
-                        </div>
+
+                            {/* Text Section */}
+                            <div className="space-y-4 md:w-1/2">
+                                <h2 className="text-2xl text-center md:text-start font-bold">{item.title}</h2>
+                                <p className="text-sm leading-relaxed text-center md:text-start">{item.description}</p>
+                            </div>
+                        </motion.div>
                     ))}
                 </div>
             </section>
