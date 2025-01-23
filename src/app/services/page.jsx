@@ -9,43 +9,33 @@ import { motion } from 'framer-motion';
 const Services = () => {
     const services = [
         {
-            title: "Wedding Films",
+            title: "Weddings",
             description: "Capturing the magic of your special day with elegance and detail.",
             image: "/aboutusheader.jpg",
         },
         {
-            title: "Reception Coverage",
+            title: "Bartabandha",
             description: "Relive the joy and celebrations of your post-wedding festivities.",
             image: "/aboutusheader.jpg",
         },
         {
-            title: "Haldi/Mehendi Events",
+            title: "Pre wedding/ Post wedding",
             description: "Highlighting the vibrant traditions and heartfelt moments of pre-wedding rituals.",
             image: "/aboutusheader.jpg",
         },
         {
-            title: "Bratabandha",
+            title: "Corporate Events",
             description: "Documenting the sacred journey of coming-of-age ceremonies with cultural authenticity.",
             image: "/aboutusheader.jpg",
         },
         {
-            title: "Pre-Wedding/Post-Wedding Shoots",
+            title: "Documentries",
             description: "Showcasing your love story in captivating locations and settings.",
             image: "/aboutusheader.jpg",
         },
         {
-            title: "Commercials",
+            title: "Short films",
             description: "Crafting impactful advertisements that resonate with your target audience.",
-            image: "/aboutusheader.jpg",
-        },
-        {
-            title: "Documentaries",
-            description: "Telling compelling real-life stories with depth and emotion.",
-            image: "/aboutusheader.jpg",
-        },
-        {
-            title: "Short Films",
-            description: "Creating artistic and engaging narratives with precision and style.",
             image: "/aboutusheader.jpg",
         },
     ];

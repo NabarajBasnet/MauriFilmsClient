@@ -1,5 +1,6 @@
 "use client";
 
+import { IoIosTime } from "react-icons/io";
 import Footer from "@/components/Footer/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -27,26 +28,33 @@ const ContactUs = () => {
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
                     {/* Left Section */}
                     <div>
-                        <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
-                        <p className="text-sm mb-6">We’d love to hear from you! Reach out to us to discuss your next project:</p>
+                        <h2 className="text-3xl font-bold mb-6">Contact Us</h2>
+                        <p className="text-sm mb-6">We’d love to hear from you! Reach out to us to discuss your projects</p>
 
                         <div className="space-y-4">
                             <h1 className="text-xl font-bold">Numbers</h1>
                             <div className="flex items-center space-x-4">
                                 <FaPhoneAlt className="text-gray-600 text-xl" />
-                                <span className="text-sm">9868177119</span>
+                                <span className="text-sm">+977 9868177119</span>
                             </div>
 
                             <h1 className="text-xl font-bold">Email</h1>
                             <div className="flex items-center space-x-4">
                                 <FaEnvelope className="text-gray-600 text-xl" />
-                                <span className="text-sm">maurinrpal@gmail.com</span>
+                                <span className="text-sm">maurinepal@gmail.com</span>
                             </div>
 
                             <h1 className="text-xl font-bold">Address</h1>
                             <div className="flex items-center space-x-4">
                                 <FaMapMarkerAlt className="text-gray-600 text-xl" />
-                                <span className="text-sm">Imadol-04, Lalitpur</span>
+                                <span className="text-sm">Imadol - 04, lalitpur</span>
+                            </div>
+
+                            <h1 className="text-xl font-bold">Business Hours</h1>
+                            <div className="flex items-center space-x-4">
+                                <IoIosTime className="text-gray-600 text-xl" />
+                                <span className="text-sm">Sunday - Friday (10 AM - 5 PM)</span>
+                                <span className="text-sm text-red-700 font-semibold">Saturday - Closed</span>
                             </div>
                         </div>
                     </div>
@@ -67,8 +75,17 @@ const ContactUs = () => {
                                     </SelectTrigger>
                                     <SelectContent>
                                         <SelectGroup>
-                                            <SelectItem value="wedding-bride-side">Wedding - Bride Side</SelectItem>
-                                            <SelectItem value="wedding-groom-side">Wedding - Groom Side</SelectItem>
+                                            <SelectItem value="Wedding - Bride Side">Wedding - Bride Side</SelectItem>
+                                            <SelectItem value="Wedding - Groom Side">Wedding - Groom Side</SelectItem>
+                                            <SelectItem value="Wedding - Both Side">Wedding - Both Side</SelectItem>
+                                            <SelectItem value="Receptation Mehendi">Receptation Mehendi</SelectItem>
+                                            <SelectItem value="Engagement">Engagement</SelectItem>
+                                            <SelectItem value="Pre/Post Wedding Shoot">Pre/Post Wedding Shoot</SelectItem>
+                                            <SelectItem value="Birthday">Birthday</SelectItem>
+                                            <SelectItem value="Pasni">Pasni</SelectItem>
+                                            <SelectItem value="Bartabandha/Belbibaha/Guniyo Cholo">Bartabandha/Belbibaha/Guniyo Cholo</SelectItem>
+                                            <SelectItem value="Corporate">Corporate</SelectItem>
+                                            <SelectItem value="Short Films">Short Films</SelectItem>
                                             <SelectItem value="other">Other</SelectItem>
                                         </SelectGroup>
                                     </SelectContent>
