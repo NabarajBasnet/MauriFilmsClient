@@ -22,10 +22,6 @@ export default function HomePage() {
     { id: 6, image: '/images/6.jpg' },
     { id: 7, image: '/images/7.jpg' },
     { id: 8, image: '/images/8.jpg' },
-    { id: 9, image: '/images/9.jpg' },
-    { id: 10, image: '/images/10.jpg' },
-    { id: 11, image: '/images/11.jpg' },
-    { id: 12, image: '/images/12.jpg' },
   ];
 
   const handleNext = () => {
