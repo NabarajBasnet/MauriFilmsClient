@@ -29,7 +29,6 @@ export default function HomePage() {
   const isInView = useInView(galleryRef, { once: true, margin: "0px 0px -100px 0px" });
 
   const images = [
-    { id: 1, image: '/images/1.jpg' },
     { id: 2, image: '/images/2.jpg' },
     { id: 3, image: '/images/3.jpg' },
     { id: 4, image: '/images/4.jpg' },
@@ -40,7 +39,6 @@ export default function HomePage() {
     { id: 9, image: '/images/9.jpg' },
   ];
 
-  // Random animation delays for gallery items
   const galleryDelays = images.map((_, i) => i * 0.1 + getRandomDelay());
 
   const handleKeyDown = (e) => {
@@ -68,7 +66,7 @@ export default function HomePage() {
     <div className="relative min-h-screen w-full">
       {/* Hero Section */}
       <section className="relative h-screen w-full bg-cover bg-center">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/30"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
 
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
           <motion.div
@@ -78,19 +76,17 @@ export default function HomePage() {
             className="mb-8"
           >
             <motion.h1
-              className="text-5xl md:text-7xl font-bold mb-6 font-serif"
+              className="text-5xl md:text-7xl font-bold mb-6 font-playfair tracking-wide"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'circOut' }}
             >
-              <span className="bg-gradient-to-r from-[#FFD700] to-[#FFA500] bg-clip-text text-transparent">
-                Mauri Films
-              </span>
+              Welcome to Mauri Films
             </motion.h1>
           </motion.div>
 
           <motion.div
-            className="max-w-3xl space-y-6"
+            className="max-w-3xl space-y-6 font-poppins"
             initial="hidden"
             animate="visible"
             variants={{
@@ -105,13 +101,13 @@ export default function HomePage() {
             }}
           >
             <motion.p
-              className="text-xl md:text-3xl font-light italic"
+              className="text-lg md:text-2xl mb-8 font-medium italic"
               variants={{
                 hidden: { opacity: 0, x: -50 },
                 visible: { opacity: 1, x: 0 }
               }}
             >
-              "Capturing Life's Unscripted Moments"
+              Your Story, Our Creativity
             </motion.p>
 
             <motion.div
@@ -121,54 +117,58 @@ export default function HomePage() {
                 visible: { opacity: 1 }
               }}
             >
-              <div className="flex space-x-4">
+              <motion.p
+                className="text-sm md:text-lg max-w-2xl mb-10 font-light leading-relaxed"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 1 }}
+              >
+                At Mauri Films, we transform moments into memories and stories into
+                timeless visuals. Whether it's a wedding, a cultural celebration, or a
+                commercial venture, our creative team is here to bring your vision to
+                life. Let us craft your narrative with passion and precision.
+              </motion.p>
+
+              <div className="flex space-x-4 font-raleway">
                 <Button
-                  className="rounded-full px-8 py-6 hover:bg-[#FFA500] bg-[#FFA500] text-black font-bold transition-all hover:scale-105"
+                  className="rounded-none hover:bg-[#800000] bg-[#800000] px-8 py-6 font-semibold tracking-wide"
                   size="lg"
                 >
-                  Explore Portfolio
+                  Our Portfolio
                 </Button>
                 <a href="https://wa.me/+9779868177119" target="_blank" rel="noopener noreferrer">
                   <Button
                     variant="outline"
                     size="lg"
-                    className="rounded-full px-8 py-6 border-2 border-white hover:border-[#FFA500] hover:text-[#FFA500] transition-all hover:scale-105"
+                    className="text-black rounded-none hover:text-gray-700 transition-colors duration-300 border-white hover:border-gray-300 px-8 py-6 font-semibold tracking-wide"
                   >
-                    Start Your Project
+                    Contact Us
                   </Button>
                 </a>
               </div>
-              <motion.p
-                className="text-sm md:text-base max-w-xl opacity-80"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.8 }}
-                transition={{ duration: 1, delay: 2 }}
-              >
-                Award-winning cinematography & storytelling since 2015
-              </motion.p>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Gallery Section */}
-      <section ref={galleryRef} className="py-20 bg-gradient-to-b from-black to-slate-900">
+      <section ref={galleryRef} className="w-full py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-4xl font-bold text-center mb-12 text-white"
+            className="text-4xl font-bold text-center mb-12 text-black"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            Our Visual Stories
-            <div className="mt-2 w-24 h-1 bg-[#FFA500] mx-auto"></div>
+            Our Gallery
+            <div className="mt-2 w-24 h-1 bg-[#800000] mx-auto"></div>
           </motion.h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             {images.map((image, index) => (
               <motion.div
                 key={image.id}
-                className="relative aspect-square overflow-hidden cursor-pointer group"
+                className="relative w-full h-96 bg-gray-200 overflow-hidden cursor-pointer"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ delay: galleryDelays[index], duration: 0.5 }}
@@ -181,9 +181,8 @@ export default function HomePage() {
                   src={image.image}
                   alt={`Gallery Image ${index + 1}`}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover transition-transform duration-500 hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/30 transition-opacity duration-300 group-hover:bg-black/50" />
               </motion.div>
             ))}
           </div>
@@ -206,7 +205,7 @@ export default function HomePage() {
                 animate={{ x: 0 }}
               >
                 <button
-                  className="p-4 text-white hover:text-[#FFA500] transition-all"
+                  className="p-4 text-white hover:text-[#800000] transition-all"
                   onClick={handlePrev}
                 >
                   <FaAngleLeft size={40} />
@@ -219,7 +218,7 @@ export default function HomePage() {
                 animate={{ x: 0 }}
               >
                 <button
-                  className="p-4 text-white hover:text-[#FFA500] transition-all"
+                  className="p-4 text-white hover:text-[#800000] transition-all"
                   onClick={handleNext}
                 >
                   <FaAngleRight size={40} />
@@ -245,7 +244,7 @@ export default function HomePage() {
             </div>
 
             <button
-              className="absolute top-8 right-8 text-white text-2xl hover:text-[#FFA500]"
+              className="absolute top-8 right-8 text-white text-2xl hover:text-[#800000]"
               onClick={() => setGalleryState(false)}
             >
               ✕
@@ -257,4 +256,4 @@ export default function HomePage() {
       <Footer />
     </div>
   );
-}
+};
