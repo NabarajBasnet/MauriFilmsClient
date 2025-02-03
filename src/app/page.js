@@ -37,7 +37,7 @@ export default function HomePage() {
     { id: 7, image: '/images/7.jpg' },
     { id: 8, image: '/images/8.jpg' },
     { id: 9, image: '/images/9.jpg' },
-  ];
+];
 
   const galleryDelays = images.map((_, i) => i * 0.1 + getRandomDelay());
 
