@@ -400,7 +400,7 @@ export default function HomePage() {
             {packages.map((packaged, index) => (
               <motion.div
                 key={index}
-                className={`relative p-8 rounded-xl shadow-lg ${packaged.popular ? "border-2 border-[#800000]" : "border border-gray-200"
+                className={`relative p-8 rounded-2xl shadow-lg ${packaged.popular ? "border-2 border-[#800000]" : "border border-gray-200"
                   }`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -408,7 +408,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
               >
                 {packaged.popular && (
-                  <div className="absolute top-0 right-0 bg-[#800000] text-white px-4 py-1 rounded-tr-xl rounded-bl-xl">
+                  <div className="absolute top-0 right-0 bg-[#800000] text-white px-4 py-1 rounded-tr-xl rounded-bl-2xl">
                     Most Popular
                   </div>
                 )}
@@ -455,15 +455,15 @@ export default function HomePage() {
                   <div className="space-y-4">
                     <div className="flex items-center">
                       <MapPinIcon className="w-6 h-6 text-[#800000] mr-3" />
-                      <span>123 Studio Street, Kathmandu, Nepal</span>
+                      <span>Imadol - 04, lalitpur</span>
                     </div>
                     <div className="flex items-center">
                       <PhoneIcon className="w-6 h-6 text-[#800000] mr-3" />
-                      <span>+977 986-8177119</span>
+                      <span>+977 9868177119</span>
                     </div>
                     <div className="flex items-center">
                       <MailIcon className="w-6 h-6 text-[#800000] mr-3" />
-                      <span>info@maurifilms.com</span>
+                      <span>maurinepal@gmail.com</span>
                     </div>
                   </div>
                 </div>
@@ -473,21 +473,21 @@ export default function HomePage() {
                     <input
                       type="text"
                       placeholder="Your Name"
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#800000] focus:border-transparent"
+                      className="w-full focus:outline-none p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#800000] focus:border-transparent"
                     />
                   </div>
                   <div>
                     <input
                       type="email"
                       placeholder="Your Email"
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#800000] focus:border-transparent"
+                      className="w-full focus:outline-none p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#800000] focus:border-transparent"
                     />
                   </div>
                   <div>
                     <textarea
                       placeholder="Your Message"
                       rows="4"
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#800000] focus:border-transparent"
+                      className="w-full focus:outline-none p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#800000] focus:border-transparent"
                     ></textarea>
                   </div>
                   <Button className="w-full bg-[#800000] hover:bg-[#600000]">
