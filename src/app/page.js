@@ -313,10 +313,10 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
-              { name: "John Doe", role: "Lead Photographer", image: "/team/1.jpg" },
-              { name: "Jane Smith", role: "Videographer", image: "/team/2.jpg" },
-              { name: "Mike Johnson", role: "Editor", image: "/team/3.jpg" },
-              { name: "Sarah Williams", role: "Studio Manager", image: "/team/4.jpg" }
+              { name: "John Doe", role: "Lead Photographer", image: "/images/1.jpg" },
+              { name: "Jane Smith", role: "Videographer", image: "/images/2.jpg" },
+              { name: "Mike Johnson", role: "Editor", image: "/images/3.jpg" },
+              { name: "Sarah Williams", role: "Studio Manager", image: "/images/4.jpg" }
             ].map((member, index) => (
               <motion.div
                 key={index}
