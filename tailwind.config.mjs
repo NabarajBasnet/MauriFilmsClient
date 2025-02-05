@@ -13,6 +13,7 @@ export default {
 					playfair: ['Playfair Display', 'serif'],
 					poppins: ['Poppins', 'sans-serif'],
 					raleway: ['Raleway', 'sans-serif'],
+					digital: ['Digital-7', 'sans-serif'],
 				},
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',

@@ -74,27 +74,71 @@ export default function HomePage() {
     <div className="relative min-h-screen w-full">
       {/* Hero Section */}
       <section className="relative h-screen w-full bg-cover bg-center">
-        <div className="absolute inset-0 bg-black/60"></div>
-
+        <div className="absolute inset-0 bg-black/70"></div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+
+          <motion.p
+            style={{ fontFamily: "BebasNeue-Regular", letterSpacing: '0.3rem' }}
+            className="text-md m-4 text-teal-400 md:text-lg font-bold"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0 }
+            }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            YOUR STORY, OUR CREATIVITY
+          </motion.p>
+
           <motion.div
             variants={floatingVariants}
             initial="float"
             animate="float"
-            className="mb-8"
           >
-            <motion.h1
-              className="text-5xl md:text-7xl font-bold mb-6 font-playfair tracking-wide"
+            <motion.div
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: 'circOut' }}
-            >
-              Welcome to Mauri Films
-            </motion.h1>
+              transition={{ duration: 0.8, ease: 'circOut' }}>
+
+              <motion.h1
+                className='flex items-center space-x-7'
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: 'circOut' }}
+              >
+                <motion.span
+                  style={{ fontFamily: "BebasNeue-Regular", letterSpacing: '0.05em' }}
+                  className="text-8xl md:text-[12rem] font-bold mb-6 tracking-wide"
+                  initial={{ opacity: 0, y: -50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: 'circOut' }}
+                >
+                  WELCOME
+                </motion.span>
+                <motion.span
+                  style={{ fontFamily: "Courgette-Regular" }}
+                  className="text-7xl md:text-[12rem] italic font-bold mb-6 tracking-wide"
+                  initial={{ opacity: 0, y: -50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: 'circOut' }}
+                >to</motion.span>
+              </motion.h1>
+
+              <motion.h1
+                style={{ fontFamily: "BebasNeue-Regular", letterSpacing: '0.05em' }}
+                className="text-8xl md:text-[12rem] font-bold mb-6 tracking-wide"
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: 'circOut' }}
+              >
+                MAURI FILMS
+              </motion.h1>
+            </motion.div>
           </motion.div>
 
           <motion.div
-            className="max-w-3xl space-y-6 font-poppins"
+            className="max-w-3xl font-poppins"
             initial="hidden"
             animate="visible"
             variants={{
@@ -108,36 +152,15 @@ export default function HomePage() {
               }
             }}
           >
-            <motion.p
-              className="text-lg md:text-2xl mb-8 font-medium italic"
-              variants={{
-                hidden: { opacity: 0, x: -50 },
-                visible: { opacity: 1, x: 0 }
-              }}
-            >
-              Your Story, Our Creativity
-            </motion.p>
 
             <motion.div
-              className="flex flex-col space-y-4 items-center"
+              className="flex flex-col items-center"
               variants={{
                 hidden: { opacity: 0 },
                 visible: { opacity: 1 }
               }}
             >
-              <motion.p
-                className="text-sm md:text-lg max-w-2xl mb-10 font-light leading-relaxed"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 1 }}
-              >
-                At Mauri Films, we transform moments into memories and stories into
-                timeless visuals. Whether it's a wedding, a cultural celebration, or a
-                commercial venture, our creative team is here to bring your vision to
-                life. Let us craft your narrative with passion and precision.
-              </motion.p>
-
-              <div className="flex space-x-4 font-raleway">
+              <div className="flex space-x-4">
                 <Button
                   className="rounded-none hover:bg-[#800000] bg-[#800000] px-8 py-6 font-semibold tracking-wide"
                   size="lg"
