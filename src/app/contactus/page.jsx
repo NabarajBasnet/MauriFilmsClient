@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from 'framer-motion';
 import { IoIosTime } from "react-icons/io";
 import Footer from "@/components/Footer/Footer";
 import { Button } from "@/components/ui/button";
@@ -13,122 +14,221 @@ import {
     SelectGroup
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 
 const ContactUs = () => {
+    const serviceOptions = [
+        { category: "Weddings", items: ["Bride Side", "Groom Side", "Both Sides"] },
+        { category: "Cultural Events", items: ["Reception Mehendi", "Engagement", "Pasni"] },
+        { category: "Photography", items: ["Pre-Wedding Shoot", "Post-Wedding Shoot", "Birthday"] },
+        { category: "Traditional Ceremonies", items: ["Bartabandha", "Belbibaha", "Guniyo Cholo"] },
+        { category: "Corporate", items: ["Events", "Documentaries"] },
+        { category: "Films", items: ["Short Films", "Documentaries"] },
+        { value: "other", label: "Other" }
+    ];
+
     return (
-        <div>
-            <div className="relative bg-cover bg-center h-[230px]" style={{ backgroundImage: "url('/aboutusheader.jpg')" }}>
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-                    <h1 className="text-3xl md:text-6xl font-bold text-white">Contact Us</h1>
+        <div className="bg-white">
+            {/* Hero Section */}
+            <div className="relative h-[250px] bg-cover bg-center" style={{ backgroundImage: "url('/images/6.jpg')" }}>
+                <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                    <motion.h1
+                        initial={{ y: 50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        className="text-4xl md:text-6xl font-bold text-white text-center"
+                    >
+                        Let's Create Together
+                    </motion.h1>
                 </div>
             </div>
 
-            <section className="bg-gray-100 py-16 px-4 md:px-20">
-                <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-                    {/* Left Section */}
-                    <div>
-                        <h2 className="text-3xl font-bold mb-6">Contact Us</h2>
-                        <p className="text-sm mb-6">We’d love to hear from you! Reach out to us to discuss your projects</p>
+            {/* Contact Section */}
+            <section className="py-16 px-4 md:px-8">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    {/* Contact Info */}
+                    <motion.div
+                        initial={{ x: -50, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        className="space-y-8"
+                    >
+                        <h2 className="text-3xl font-bold text-[#800000]">Get in Touch</h2>
+                        <p className="text-lg text-gray-600">Have a project in mind? Let's discuss how we can bring your vision to life.</p>
 
-                        <div className="space-y-4">
-                            <h1 className="text-xl font-bold">Numbers</h1>
-                            <div className="flex items-center space-x-4">
-                                <FaPhoneAlt className="text-gray-600 text-xl" />
-                                <span className="text-sm">+977 9868177119</span>
-                            </div>
+                        <div className="space-y-6">
+                            <motion.div
+                                className="p-6 bg-white rounded-xl shadow-md"
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                            >
+                                <div className="flex items-center gap-4 mb-3">
+                                    <FaPhoneAlt className="text-[#800000] text-xl" />
+                                    <h3 className="text-xl font-semibold">Contact Numbers</h3>
+                                </div>
+                                <p className="text-gray-600">+977 9868177119</p>
+                                <p className="text-gray-600">+977 9800000000</p>
+                            </motion.div>
 
-                            <h1 className="text-xl font-bold">Email</h1>
-                            <div className="flex items-center space-x-4">
-                                <FaEnvelope className="text-gray-600 text-xl" />
-                                <span className="text-sm">maurinepal@gmail.com</span>
-                            </div>
+                            <motion.div
+                                className="p-6 bg-white rounded-xl shadow-md"
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                            >
+                                <div className="flex items-center gap-4 mb-3">
+                                    <FaEnvelope className="text-[#800000] text-xl" />
+                                    <h3 className="text-xl font-semibold">Email Address</h3>
+                                </div>
+                                <p className="text-gray-600">maurinepal@gmail.com</p>
+                            </motion.div>
 
-                            <h1 className="text-xl font-bold">Address</h1>
-                            <div className="flex items-center space-x-4">
-                                <FaMapMarkerAlt className="text-gray-600 text-xl" />
-                                <span className="text-sm">Imadol - 04, lalitpur</span>
-                            </div>
+                            <motion.div
+                                className="p-6 bg-white rounded-xl shadow-md"
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                            >
+                                <div className="flex items-center gap-4 mb-3">
+                                    <FaMapMarkerAlt className="text-[#800000] text-xl" />
+                                    <h3 className="text-xl font-semibold">Studio Address</h3>
+                                </div>
+                                <p className="text-gray-600">Imadol - 04, Lalitpur, Nepal</p>
+                            </motion.div>
 
-                            <h1 className="text-xl font-bold">Business Hours</h1>
-                            <div className="flex items-center space-x-4">
-                                <IoIosTime className="text-gray-600 text-xl" />
-                                <span className="text-sm">Sunday - Friday (10 AM - 5 PM)</span>
-                                <span className="text-sm text-red-700 font-semibold">Saturday - Closed</span>
-                            </div>
+                            <motion.div
+                                className="p-6 bg-white rounded-xl shadow-md"
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                            >
+                                <div className="flex items-center gap-4 mb-3">
+                                    <IoIosTime className="text-[#800000] text-xl" />
+                                    <h3 className="text-xl font-semibold">Business Hours</h3>
+                                </div>
+                                <p className="text-gray-600">Sunday - Friday: 10 AM - 5 PM</p>
+                                <p className="text-red-600 font-medium">Saturday: Closed</p>
+                            </motion.div>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    {/* Right Section */}
-                    <div>
-                        <h3 className="text-3xl font-bold mb-6">Send Us a Message</h3>
+                    {/* Contact Form */}
+                    <motion.div
+                        initial={{ x: 50, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        className="bg-white p-8 rounded-2xl shadow-xl"
+                    >
+                        <h3 className="text-3xl font-bold text-[#800000] mb-8">Send Us a Message</h3>
 
                         <form className="space-y-6">
                             <div>
-                                <label htmlFor="interest" className="block text-lg font-medium mb-2">
-                                    I'm interested in:
-                                </label>
-
+                                <label className="block text-lg font-medium mb-3">Service Interest</label>
                                 <Select>
-                                    <SelectTrigger className="w-full py-6 shadow-sm">
-                                        <SelectValue placeholder="Select a fruit" />
+                                    <SelectTrigger className="w-full h-14">
+                                        <SelectValue placeholder="Select service type" />
                                     </SelectTrigger>
                                     <SelectContent>
-                                        <SelectGroup>
-                                            <SelectItem value="Wedding - Bride Side">Wedding - Bride Side</SelectItem>
-                                            <SelectItem value="Wedding - Groom Side">Wedding - Groom Side</SelectItem>
-                                            <SelectItem value="Wedding - Both Side">Wedding - Both Side</SelectItem>
-                                            <SelectItem value="Receptation Mehendi">Receptation Mehendi</SelectItem>
-                                            <SelectItem value="Engagement">Engagement</SelectItem>
-                                            <SelectItem value="Pre/Post Wedding Shoot">Pre/Post Wedding Shoot</SelectItem>
-                                            <SelectItem value="Birthday">Birthday</SelectItem>
-                                            <SelectItem value="Pasni">Pasni</SelectItem>
-                                            <SelectItem value="Bartabandha/Belbibaha/Guniyo Cholo">Bartabandha/Belbibaha/Guniyo Cholo</SelectItem>
-                                            <SelectItem value="Corporate">Corporate</SelectItem>
-                                            <SelectItem value="Short Films">Short Films</SelectItem>
-                                            <SelectItem value="other">Other</SelectItem>
-                                        </SelectGroup>
+                                        {serviceOptions.map((option, index) => (
+                                            option.category ? (
+                                                <SelectGroup key={index} label={option.category}>
+                                                    {option.items.map((item, idx) => (
+                                                        <SelectItem
+                                                            key={idx}
+                                                            value={`${option.category}-${item}`}
+                                                        >
+                                                            {item}
+                                                        </SelectItem>
+                                                    ))}
+                                                </SelectGroup>
+                                            ) : (
+                                                <SelectItem key={index} value={option.value}>
+                                                    {option.label}
+                                                </SelectItem>
+                                            )
+                                        ))}
                                     </SelectContent>
                                 </Select>
                             </div>
 
                             <div>
-                                <label htmlFor="name" className="block text-lg font-medium mb-2">
-                                    Name
-                                </label>
-                                <Input id="name" placeholder="Your name" className="w-full py-6 shadow-sm" />
+                                <label className="block text-lg font-medium mb-3">Full Name</label>
+                                <Input
+                                    placeholder="Enter your full name"
+                                    className="h-14 focus-visible:ring-[#800000]"
+                                />
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label className="block text-lg font-medium mb-3">Email Address</label>
+                                    <Input
+                                        type="email"
+                                        placeholder="your@email.com"
+                                        className="h-14 focus-visible:ring-[#800000]"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-lg font-medium mb-3">Phone Number</label>
+                                    <Input
+                                        type="tel"
+                                        placeholder="+977 98XXXXXXXX"
+                                        className="h-14 focus-visible:ring-[#800000]"
+                                    />
+                                </div>
                             </div>
 
                             <div>
-                                <label htmlFor="email" className="block text-lg font-medium mb-2">
-                                    Email
-                                </label>
-                                <Input id="email" placeholder="Your email" type="email" className="py-6 w-full shadow-sm" />
+                                <label className="block text-lg font-medium mb-3">Your Message</label>
+                                <Textarea
+                                    placeholder="Describe your project or inquiry..."
+                                    className="min-h-[150px] focus-visible:ring-[#800000]"
+                                />
                             </div>
 
-                            <div>
-                                <label htmlFor="phone" className="block text-lg font-medium mb-2">
-                                    Phone Number
-                                </label>
-                                <Input id="phone" placeholder="Your phone number" type="tel" className="py-6 w-full shadow-sm" />
-                            </div>
-
-                            <div>
-                                <label htmlFor="message" className="block text-lg font-medium mb-2">
-                                    Comment or Message
-                                </label>
-                                <Textarea id="message" placeholder="Your message" className="w-full shadow-sm" rows={5} />
-                            </div>
-
-                            <Button className="w-full rounded-none bg-black text-white py-6 text-lg font-medium">
+                            <Button
+                                className="w-full h-14 bg-[#800000] hover:bg-[#600000] text-lg rounded-lg transition-all"
+                                type="submit"
+                            >
                                 Send Message
                             </Button>
                         </form>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.4565198222667!2d85.33282757498846!3d27.703187676184896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb194487783651%3A0xcbfa6f39863d05f6!2sThe%20Physique%20Workshop!5e0!3m2!1sen!2snp!4v1735902286633!5m2!1sen!2snp" width="100%" height="450" loading="lazy"></iframe>
+            {/* Map Section */}
+            <motion.div
+                className="px-4 md:px-8 pb-16"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+            >
+                <div className="max-w-7xl mx-auto rounded-xl overflow-hidden shadow-xl">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.4565198222667!2d85.33282757498846!3d27.703187676184896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb194487783651%3A0xcbfa6f39863d05f6!2sThe%20Physique%20Workshop!5e0!3m2!1sen!2snp!4v1735902286633!5m2!1sen!2snp"
+                        width="100%"
+                        height="450"
+                        loading="lazy"
+                        className="border-0"
+                    />
+                </div>
+            </motion.div>
+
+            {/* CTA Section */}
+            <section className="bg-[#800000] py-16 text-center">
+                <div className="max-w-4xl mx-auto px-4">
+                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                        Prefer Direct Communication?
+                    </h3>
+                    <p className="text-lg text-white/90 mb-8">
+                        Connect with us directly via WhatsApp for instant support
+                    </p>
+                    <a href="https://wa.me/+9779868177119" target="_blank" rel="noopener noreferrer">
+                        <Button
+                            variant="outline"
+                            className="bg-transparent text-white border-white hover:bg-white hover:text-[#800000] h-14 px-8 text-lg"
+                        >
+                            <FaWhatsapp className="text-6xl" />
+                            Chat on WhatsApp
+                        </Button>
+                    </a>
+                </div>
+            </section>
+
             <Footer />
         </div>
     );
