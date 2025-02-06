@@ -127,7 +127,7 @@ export default function HomePage() {
 
               <motion.h1
                 style={{ fontFamily: "BebasNeue-Regular", letterSpacing: '0.05em' }}
-                className="text-6xl md:text-[12rem] font-bold mb-6 tracking-wide"
+                className="text-6xl md:text-[12rem] font-bold mb-6 md:mb-0 tracking-wide"
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'circOut' }}
@@ -162,6 +162,7 @@ export default function HomePage() {
             >
               <div className="flex space-x-4">
                 <Button
+                  onClick={() => router.push('/portfolio')}
                   className="rounded-none hover:bg-[#800000] bg-[#800000] px-8 py-6 font-semibold tracking-wide"
                   size="lg"
                 >
@@ -447,9 +448,11 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full bg-[#800000] hover:bg-[#600000]">
-                  Book Now
-                </Button>
+                <a href="https://wa.me/+9779868177119" target="_blank" rel="noopener noreferrer">
+                  <Button className="w-full bg-[#800000] hover:bg-[#600000]">
+                    Book Now
+                  </Button>
+                </a>
               </motion.div>
             ))}
           </div>
