@@ -79,7 +79,7 @@ export default function HomePage() {
 
           <motion.p
             style={{ fontFamily: "BebasNeue-Regular", letterSpacing: '0.3rem' }}
-            className="text-md m-4 text-teal-400 md:text-lg font-bold"
+            className="text-md m-4 text-white md:text-lg font-bold"
             initial="hidden"
             animate="visible"
             variants={{
@@ -102,14 +102,14 @@ export default function HomePage() {
               transition={{ duration: 0.8, ease: 'circOut' }}>
 
               <motion.h1
-                className='flex items-center space-x-7'
+                className='flex items-center space-x-1 md:space-x-7'
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'circOut' }}
               >
                 <motion.span
                   style={{ fontFamily: "BebasNeue-Regular", letterSpacing: '0.05em' }}
-                  className="text-8xl md:text-[12rem] font-bold mb-6 tracking-wide"
+                  className="text-6xl md:text-[12rem] font-bold mb-6 tracking-wide"
                   initial={{ opacity: 0, y: -50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: 'circOut' }}
@@ -118,7 +118,7 @@ export default function HomePage() {
                 </motion.span>
                 <motion.span
                   style={{ fontFamily: "Courgette-Regular" }}
-                  className="text-7xl md:text-[12rem] italic font-bold mb-6 tracking-wide"
+                  className="text-5xl md:text-[12rem] italic font-bold mb-6 tracking-wide"
                   initial={{ opacity: 0, y: -50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: 'circOut' }}
@@ -127,7 +127,7 @@ export default function HomePage() {
 
               <motion.h1
                 style={{ fontFamily: "BebasNeue-Regular", letterSpacing: '0.05em' }}
-                className="text-8xl md:text-[12rem] font-bold mb-6 tracking-wide"
+                className="text-6xl md:text-[12rem] font-bold mb-6 tracking-wide"
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'circOut' }}
