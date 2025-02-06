@@ -1,5 +1,7 @@
 'use client';
 
+import Link from "next/link";
+import { FaFacebookF, FaInstagram, FaYoutube, FaPinterestP, FaTiktok } from "react-icons/fa";
 import { CheckIcon, MapPinIcon, PhoneIcon, MailIcon } from 'lucide-react';
 import { CameraIcon, VideoIcon, BrushIcon, UsersIcon, StarIcon, CalendarIcon } from 'lucide-react';
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
@@ -109,7 +111,7 @@ export default function HomePage() {
               >
                 <motion.span
                   style={{ fontFamily: "BebasNeue-Regular", letterSpacing: '0.05em' }}
-                  className="text-6xl md:text-[12rem] font-bold mb-6 tracking-wide"
+                  className="text-6xl md:text-[12rem] font-bold tracking-wide"
                   initial={{ opacity: 0, y: -50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: 'circOut' }}
@@ -118,7 +120,7 @@ export default function HomePage() {
                 </motion.span>
                 <motion.span
                   style={{ fontFamily: "Courgette-Regular" }}
-                  className="text-5xl md:text-[12rem] italic font-bold mb-6 tracking-wide"
+                  className="text-5xl md:text-[12rem] italic font-bold tracking-wide"
                   initial={{ opacity: 0, y: -50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: 'circOut' }}
@@ -134,6 +136,34 @@ export default function HomePage() {
               >
                 MAURI FILMS
               </motion.h1>
+            </motion.div>
+
+            <motion.div
+              className="w-full flex justify-center m-6 items-center"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0, x: 50 },
+                visible: { opacity: 1, x: 0 }
+              }}
+              transition={{ duration: 0.8, ease: "easeOut" }}>
+              <motion.div className="flex space-x-6 text-white">
+                <Link href="#" aria-label="Facebook">
+                  <FaFacebookF className="w-6 h-6 hover:text-white" />
+                </Link>
+                <Link href="#" aria-label="TikTok">
+                  <FaTiktok className="w-6 h-6 hover:text-white" />
+                </Link>
+                <Link href="#" aria-label="Instagram">
+                  <FaInstagram className="w-6 h-6 hover:text-white" />
+                </Link>
+                <Link href="#" aria-label="YouTube">
+                  <FaYoutube className="w-6 h-6 hover:text-white" />
+                </Link>
+                <Link href="#" aria-label="Pinterest">
+                  <FaPinterestP className="w-6 h-6 hover:text-white" />
+                </Link>
+              </motion.div>
             </motion.div>
           </motion.div>
 
