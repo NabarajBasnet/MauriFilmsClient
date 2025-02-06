@@ -23,7 +23,7 @@ export default function AboutUs() {
     return (
         <section className="relative bg-white">
             {/* Hero Banner */}
-            <div className="relative h-[400px] bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/about-banner.jpg')" }}>
+            <div className="relative h-[250px] bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/page.jpg')" }}>
                 <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
                     <motion.h1
                         initial={{ y: 50, opacity: 0 }}
@@ -79,7 +79,7 @@ export default function AboutUs() {
                         whileInView={{ x: 0, opacity: 1 }}
                     >
                         <img
-                            src="/team-working.jpg"
+                            src="/images/2.jpg"
                             alt="Our Team"
                             className="rounded-xl shadow-2xl w-full h-[400px] object-cover"
                         />
@@ -148,11 +148,14 @@ export default function AboutUs() {
                     <h3 className="text-2xl md:text-3xl font-bold text-[#800000] mb-6">
                         Ready to Create Magic Together?
                     </h3>
-                    <Button
-                        className="bg-[#800000] hover:bg-[#600000] px-8 py-6 text-lg rounded-none"
-                    >
-                        Start Your Journey
-                    </Button>
+
+                    <a href="https://wa.me/+9779868177119" target="_blank" rel="noopener noreferrer">
+                        <Button
+                            className="bg-[#800000] hover:bg-[#600000] px-8 py-6 text-lg rounded-none"
+                        >
+                            Start Your Journey
+                        </Button>
+                    </a>
                 </motion.div>
             </div>
 
